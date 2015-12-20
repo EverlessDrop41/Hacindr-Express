@@ -11,7 +11,7 @@
   </head>
   <body>
       <nav>
-        <div class="nav-wrapper">
+        <div class="nav-wrapper teal">
           <a href="/" class="brand-logo">&nbsp; Hackindr</a>
           <ul id="nav-mobile" class="right hide-on-med-and-down">
           {% if user %}
