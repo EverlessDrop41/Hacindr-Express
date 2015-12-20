@@ -11,10 +11,13 @@ module.exports = function(app) {
 
 		unirest.get(app.locals.base_url + "/token").auth({
 			user: req.body.username,
-			password: req.body.password
+			pass: req.body.password
 		}).end(function (response) {
 		  if (response.code == 200) {
-		  	req.session.user = {token: response.body.token, user: req.body.username, req.body.password};
+		  	req.session.user = {token: response.body.token, 
+		  		user: req.body.username, 
+		  		password: req.body.password, 
+		  		authHeader: 'Basic ' + new Buffer(req.body.username + ':' + req.body.password).toString('base64')};
 		  	res.redirect('/');
 		  } else {
 		  	res.send(response.body);

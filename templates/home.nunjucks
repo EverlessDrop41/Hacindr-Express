@@ -1,0 +1,52 @@
+{% extends "layout.nunjucks" %}
+
+{% block content %}
+<div class="row">
+  <div class="col s12">
+    <div class="card blue-grey darken-1">
+      <div class="card-content white-text">
+        <span class="card-title">Welcome</span>
+        <p>You are logged in, you can choose one the the actions below</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col s12">
+	  <a href="/queue">
+	    <div class="card blue darken-1 hoverable">
+	      <div class="card-content white-text">
+	        <span class="card-title">Queue</span>
+	        <p>You get given a list of ideas you have not yet rated and you have to choose if you like them or not</p>
+	      </div>
+	    </div>
+	  </a>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col s12">
+	  <a href="/popular">
+	    <div class="card blue darken-1 hoverable">
+	      <div class="card-content white-text">
+	        <span class="card-title">Most Popular</span>
+	        <p>A list of the top 10 most popular ideas</p>
+	      </div>
+	    </div>
+	  </a>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col s12">
+    <div class="card blue darken-1 hoverable">
+      <div class="card-content white-text">
+        <span class="card-title">Create</span>
+        {# TODO: Insert an inline form #}
+        <p>[INSERT INLINE FORM]</p>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}
