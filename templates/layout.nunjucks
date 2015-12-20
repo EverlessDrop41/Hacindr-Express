@@ -19,7 +19,7 @@
             <li><a class="waves-effect waves-light" href="/logout">Logut</a></li>
           {% else %}
             <li><a class="waves-effect waves-light" href="/login">Login</a></li>
-            <!-- <li><a class="waves-effect waves-light" href="/register">Register</a></li> -->
+            <li><a class="waves-effect waves-light" href="/register">Register</a></li>
           {% endif %}
           </ul>
         </div>

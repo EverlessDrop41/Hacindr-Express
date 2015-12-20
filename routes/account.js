@@ -14,9 +14,9 @@ module.exports = function(app) {
 			pass: req.body.password
 		}).end(function (response) {
 		  if (response.code == 200) {
-		  	req.session.user = {token: response.body.token, 
-		  		user: req.body.username, 
-		  		password: req.body.password, 
+		  	req.session.user = {token: response.body.token,
+		  		user: req.body.username,
+		  		password: req.body.password,
 		  		authHeader: 'Basic ' + new Buffer(req.body.username + ':' + req.body.password).toString('base64')};
 		  	res.redirect('/');
 		  } else {
@@ -24,6 +24,25 @@ module.exports = function(app) {
 		  }
 		});
 	});
+
+	app.get('/register', function (req, res) {
+		res.render("register.nunjucks");
+	});
+
+	app.post('/register', function (req, res) {
+
+		unirest.post(app.locals.base_url + "/signup").send({
+			email: req.body.email,
+			password: req.body.password
+		}).end(function (response) {
+			console.log(response.body);
+			if (response.body.success) {
+				res.redirect('/login');
+			} else {
+				res.redirect('/register');
+			}
+		});
+	})
 
 	app.get('/logout', function(req, res) {
     req.session.user = null;
