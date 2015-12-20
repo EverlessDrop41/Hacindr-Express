@@ -39,7 +39,17 @@ module.exports = function (app) {
 		  console.log(response.body);
 		  res.redirect("/queue");
 		});
-
-  	//res.send("Voting on the idea with an id of " + req.params.id + " and a value of " + req.params.value);
   });
+
+  app.post('/create_post', app.locals.isLoggedIn, function (req, res) {
+  	unirest.post(app.locals.base_url + "/ideas/add").header({
+			Authorization: req.session.user.authHeader
+		}).send({
+  		title: req.body.title,
+  		content: req.body.content
+  	}).end(function (response) {
+		  console.log(response.body);
+		  res.redirect("/home");
+		});
+  })
 }

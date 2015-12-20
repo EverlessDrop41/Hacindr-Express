@@ -45,7 +45,7 @@
         <span class="card-title">Create</span>
         {# TODO: Insert an inline form #}
         <div class="row">
-        	<form action="/create-post" method="POST" class="col s12">
+        	<form action="/create_post" method="POST" class="col s12">
 	        	<div class="row">
 			        <div class="input-field col s12">
 			          <input required placeholder="An Example Title" name="title" id="title" type="text" class="validate">
@@ -54,7 +54,7 @@
 			      </div>
 			      <div class="row">
 			        <div class="input-field col s12">
-			          <textarea id="content" requred placeholder="The description for your awesome idea" type="text" class="validate materialize-textarea"></textarea> 
+			          <textarea id="content" name="content" requred placeholder="The description for your awesome idea" type="text" class="validate materialize-textarea"></textarea> 
 			          <label for="content">Content</label>
 			        </div>
 			      </div>
