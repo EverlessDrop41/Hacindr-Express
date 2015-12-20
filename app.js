@@ -9,7 +9,7 @@ var app = express();
 
 app.set('view engine', 'nunjucks');
 var nEnv = nunjucks.configure('templates', {
-    autoescape: false,
+    autoescape: true,
     noCache: true,
     express: app
 });
