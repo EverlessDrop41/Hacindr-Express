@@ -24,7 +24,11 @@ module.exports = function (app) {
   	unirest.get(app.locals.base_url + "/ideas/next").header({
 			Authorization: req.session.user.authHeader
 		}).end(function (response) {
-			res.render('idea.nunjucks', {user: req.session.user, idea: response.body.idea});
+			if (response.success) {
+				res.render('idea.nunjucks', {user: req.session.user, idea: response.body.idea});
+			} else {
+				res.render('idea.nunjucks', {user: req.session.user, idea: null});
+			}
 		  console.log(response.body);
 		});
   });

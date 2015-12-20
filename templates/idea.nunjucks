@@ -5,13 +5,20 @@
   <div class="col s12">
     <div class="card ">
       <div class="card-content ">
+      	{% if idea %}
         <span class="card-title">{{idea.title}}</span>
         <p>{{idea.content}}</p>
+        {% else %}
+        <span class="card-title">No idea</span>
+        <p>Sorry, we are out of ideas</p>
+        {% endif %}
       </div>
+      {% if idea %}
       <div class="card-action">
         <a href="/vote/{{idea.id}}/true">Like</a>
         <a href="/vote/{{idea.id}}/false">Dislike</a>
       </div>
+      {% endif %}
     </div>
   </div>
 </div>
