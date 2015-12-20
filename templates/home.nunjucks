@@ -54,7 +54,7 @@
 			      </div>
 			      <div class="row">
 			        <div class="input-field col s12">
-			          <textarea id="content" name="content" requred placeholder="The description for your awesome idea" type="text" class="validate materialize-textarea"></textarea> 
+			          <textarea id="content" name="content" required placeholder="The description for your awesome idea" type="text" class="validate materialize-textarea"></textarea> 
 			          <label for="content">Content</label>
 			        </div>
 			      </div>
