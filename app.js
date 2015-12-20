@@ -43,6 +43,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static('public'));
 
+require('./routes/home.js')(app);
 require('./routes/index.js')(app);
 require('./routes/account.js')(app);
 

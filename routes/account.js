@@ -13,10 +13,8 @@ module.exports = function(app) {
 			user: req.body.username,
 			password: req.body.password
 		}).end(function (response) {
-		  //console.log(response.code);
-
 		  if (response.code == 200) {
-		  	req.session.user.token = response.token;
+		  	req.session.user = {token: response.body.token};
 		  	res.redirect('/');
 		  } else {
 		  	res.send(response.body);
