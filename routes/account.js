@@ -14,7 +14,7 @@ module.exports = function(app) {
 			password: req.body.password
 		}).end(function (response) {
 		  if (response.code == 200) {
-		  	req.session.user = {token: response.body.token};
+		  	req.session.user = {token: response.body.token, user: req.body.username, req.body.password};
 		  	res.redirect('/');
 		  } else {
 		  	res.send(response.body);
