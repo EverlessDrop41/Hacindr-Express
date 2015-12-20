@@ -25,7 +25,7 @@ module.exports = function (app) {
 			Authorization: req.session.user.authHeader
 		}).end(function (response) {
 			res.render('idea.nunjucks', {user: req.session.user, idea: response.body.idea});
-		  //res.send(response.body);
+		  console.log(response.body);
 		});
   });
 
