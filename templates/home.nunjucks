@@ -15,8 +15,8 @@
 <div class="row">
   <div class="col s12">
 	  <a href="/queue">
-	    <div class="card blue darken-1 hoverable">
-	      <div class="card-content white-text">
+	    <div class="card hoverable">
+	      <div class="card-content black-text">
 	        <span class="card-title">Queue</span>
 	        <p>You get given a list of ideas you have not yet rated and you have to choose if you like them or not</p>
 	      </div>
@@ -28,8 +28,8 @@
 <div class="row">
   <div class="col s12">
 	  <a href="/popular">
-	    <div class="card blue darken-1 hoverable">
-	      <div class="card-content white-text">
+	    <div class="card hoverable">
+	      <div class="card-content black-text">
 	        <span class="card-title">Most Popular</span>
 	        <p>A list of the top 10 most popular ideas</p>
 	      </div>
@@ -40,11 +40,27 @@
 
 <div class="row">
   <div class="col s12">
-    <div class="card blue darken-1 hoverable">
-      <div class="card-content white-text">
+    <div class="card">
+      <div class="card-content black-text">
         <span class="card-title">Create</span>
         {# TODO: Insert an inline form #}
-        <p>[INSERT INLINE FORM]</p>
+        <div class="row">
+        	<form action="/create-post" method="POST" class="col s12">
+	        	<div class="row">
+			        <div class="input-field col s12">
+			          <input required placeholder="An Example Title" name="title" id="title" type="text" class="validate">
+			          <label for="title">Title</label>
+			        </div>
+			      </div>
+			      <div class="row">
+			        <div class="input-field col s12">
+			          <textarea id="content" requred placeholder="The description for your awesome idea" type="text" class="validate materialize-textarea"></textarea> 
+			          <label for="content">Content</label>
+			        </div>
+			      </div>
+			      <input type="submit" class="btn col s12">
+        	</form>
+        </div>
       </div>
     </div>
   </div>

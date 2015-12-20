@@ -30,6 +30,16 @@ module.exports = function (app) {
   });
 
   app.get('/vote/:id/:value', app.locals.isLoggedIn, function(req, res) {
-  	res.send("Voting on the idea with an id of " + req.params.id + " and a value of " + req.params.value);
+  	unirest.post(app.locals.base_url + "/ideas/vote").header({
+			Authorization: req.session.user.authHeader
+		}).send({
+  		idea: req.params.id,
+  		vote: req.params.value
+  	}).end(function (response) {
+		  console.log(response.body);
+		  res.redirect("/queue");
+		});
+
+  	//res.send("Voting on the idea with an id of " + req.params.id + " and a value of " + req.params.value);
   });
 }
