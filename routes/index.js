@@ -1,5 +1,5 @@
 module.exports = function (app) {
   app.get('/', function (req, res) {
-    res.render('index.nunjucks', {user: req.user});
+    res.render('index.nunjucks', {user: req.session.user});
   });
 }
