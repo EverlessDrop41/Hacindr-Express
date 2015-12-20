@@ -29,7 +29,7 @@ module.exports = function (app) {
 		});
   });
 
-  app.post('/vote/:id/:value', app.locals.isLoggedIn, function(req, res) {
+  app.get('/vote/:id/:value', app.locals.isLoggedIn, function(req, res) {
   	res.send("Voting on the idea with an id of " + req.params.id + " and a value of " + req.params.value);
   });
 }
