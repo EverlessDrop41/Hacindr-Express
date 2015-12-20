@@ -15,7 +15,8 @@ module.exports = function (app) {
   	unirest.get(app.locals.base_url + "/ideas/top").header({
 			Authorization: req.session.user.authHeader
 		}).end(function (response) {
-		  res.send(response.body);
+			res.render('popular.nunjucks', {user: req.session.user, ideas: response.body.ideas})
+		  //res.send(response.body);
 		});
   });
 }

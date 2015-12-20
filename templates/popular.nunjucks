@@ -1,0 +1,15 @@
+{% extends "layout.nunjucks" %}
+
+{% block content %}
+<div class="row">
+  <h2>Popular Ideas</h2>
+  <ul class="collapsible popout" data-collapsible="accordion">
+  {% for idea in ideas%}
+  <li>
+    <div class="collapsible-header">{{idea.title}}</div>
+    <div class="collapsible-body"><p>{{idea.content}}</p></div>
+  </li>
+  {% endfor %}
+</ul>
+</div>
+{% endblock %}
